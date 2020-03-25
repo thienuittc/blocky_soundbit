@@ -1,8 +1,8 @@
 {
-    "name": "Xe điều khiển",
-    "description": "123",
+    "name": "Máy nghe nhạc",
+    "description": "Bộ mở rộng máy nghe nhạc",
     "libs": [
-        "carbit.py"
+        "soundbit.py"
     ],
     "blocks": [
         "definition.js"
@@ -12,5 +12,5 @@
         "en": "languages/en.js",
         "vi": "languages/vi.js"
     },
-    "poster": "poster.png"
+    "poster": "poster.jpg"
 }
