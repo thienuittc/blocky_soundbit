@@ -16,9 +16,10 @@ Blockly.Blocks['block_sound_firstplay'] = {
 };
 Blockly.Python['block_sound_firstplay'] = function(block) {
   // TODO: Assemble Python into code variable.
+  Blockly.Python.definitions_['import_time'] = 'import time';
   Blockly.Python.definitions_['import_soundbit'] = 'from soundbit import *';
   Blockly.Python.definitions_['create_sound'] = 'sound = SoundBit()';
-  var code = 'sound.first_play()\n';
+  var code = 'time.sleep_ms(1000)\nsound.first_play()\n';
   return code;
 };
 
@@ -127,7 +128,7 @@ Blockly.Blocks['block_sound_action'] = {
 Blockly.Python['block_sound_action'] = function(block) {
   var dropdown_action = block.getFieldValue('action');
   // TODO: Assemble Python into code variable.
-  var code = 'sound.'+dropdown_action+'()\n';
+  var code = 'time.sleep_ms(100)\nsound.'+dropdown_action+'()\n';
   return code;
 };
 
