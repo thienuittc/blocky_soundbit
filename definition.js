@@ -127,7 +127,7 @@ Blockly.Blocks['block_sound_action'] = {
 Blockly.Python['block_sound_action'] = function(block) {
   var dropdown_action = block.getFieldValue('action');
   // TODO: Assemble Python into code variable.
-  var code = 'soundbit.'+dropdown_action+'()\n';
+  var code = 'sound.'+dropdown_action+'()\n';
   return code;
 };
 
