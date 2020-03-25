@@ -258,6 +258,6 @@ Blockly.Blocks['block_sound_sound'] = {
 Blockly.Python['block_sound_sound'] = function(block) {
   var dropdown_class = block.getFieldValue('class');
   // TODO: Assemble Python into code variable.
-  var code = 'sound.class_mucsic('+dropdown_class+')\n';
+  var code = 'time.sleep_ms(20)\nsound.class_mucsic('+dropdown_class+')\n';
   return code;
 };

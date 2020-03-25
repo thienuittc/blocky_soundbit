@@ -59,9 +59,11 @@ class SoundBit():
         #self.reset()
         self.command(0x3F, 0x00, 0x00)
     def first_play(self):
-        self.awaitconfig()
-        self.playtime = ticks_ms()
-        self.command(0x0C, 0x00, 0x01)
+        self.command(0x3F, 0x00, 0x00)
+        sleep_ms(500)
+        self.command(0x06,0x00 ,0x15)
+        sleep_ms(500)
+        self.command(0x11, 0x00, 0x01)
 
     def play(self):
         self.awaitconfig()
@@ -129,7 +131,7 @@ class SoundBit():
         self.awaitconfig()
         self._volume = float(clamp(volume, 0, 1.0))
         val = int(30.0 * self._volume)
-        self.command(0x06,0 ,val)
+        self.command(0x06,0x00 ,val)
         self.volumetime = ticks_ms()
 
     def standby(self):
