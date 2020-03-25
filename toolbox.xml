@@ -1,5 +1,5 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category name="SOUND:BIT" colour="#adff29" icon="road">
+  <category name="SOUND:BIT" colour="#780779" icon="music">
     <block type="block_sound_firstplay"/>
     <block type="block_sound_playback"/>
     <block type="block_sound_button"/>

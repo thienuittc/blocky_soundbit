@@ -7,7 +7,7 @@ Blockly.Blocks['block_sound_firstplay'] = {
         "message0": "khởi động máy nghe nhạc",
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 230,
+        "colour": "#780779",
         "tooltip": "",
         "helpUrl": ""
       }
@@ -54,7 +54,7 @@ Blockly.Blocks['block_sound_playback'] = {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 230,
+        "colour": "#780779",
         "tooltip": "",
         "helpUrl": ""
       }
@@ -95,7 +95,7 @@ Blockly.Blocks['block_sound_button'] = {
           }
         ],
         "output": "Boolean",
-        "colour": 230,
+        "colour": "#780779",
         "tooltip": "",
         "helpUrl": ""
       }
@@ -125,7 +125,7 @@ Blockly.Blocks['block_sound_action'] = {
                 {
                   "src": "https://raw.githubusercontent.com/thienuittc/blocky_soundbit/master/icon-tian/PLAY.gif",
                   "width": 50,
-                  "height": 30,
+                  "height": 20,
                   "alt": "*"
                 },
                 "play"
@@ -134,7 +134,7 @@ Blockly.Blocks['block_sound_action'] = {
                 {
                   "src": "https://raw.githubusercontent.com/thienuittc/blocky_soundbit/master/icon-tian/pause.gif",
                   "width": 50,
-                  "height": 30,
+                  "height": 20,
                   "alt": "*"
                 },
                 "pause"
@@ -143,7 +143,7 @@ Blockly.Blocks['block_sound_action'] = {
                 {
                   "src": "https://raw.githubusercontent.com/thienuittc/blocky_soundbit/master/icon-tian/next.gif",
                   "width": 50,
-                  "height": 30,
+                  "height": 20,
                   "alt": "*"
                 },
                 "playNext"
@@ -152,7 +152,7 @@ Blockly.Blocks['block_sound_action'] = {
                 {
                   "src": "https://raw.githubusercontent.com/thienuittc/blocky_soundbit/master/icon-tian/pre.gif",
                   "width": 50,
-                  "height": 30,
+                  "height": 20,
                   "alt": "*"
                 },
                 "playPrevious"
@@ -162,7 +162,7 @@ Blockly.Blocks['block_sound_action'] = {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 230,
+        "colour": "#780779",
         "tooltip": "",
         "helpUrl": ""
       }
@@ -191,7 +191,7 @@ Blockly.Blocks['block_sound_vol'] = {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 230,
+        "colour": "#780779",
         "tooltip": "",
         "helpUrl": ""
       }
@@ -247,7 +247,7 @@ Blockly.Blocks['block_sound_sound'] = {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 230,
+        "colour": "#780779",
         "tooltip": "",
         "helpUrl": ""
       }
