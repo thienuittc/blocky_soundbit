@@ -59,7 +59,6 @@ class SoundBit():
         #self.reset()
         self.command(0x3F, 0x00, 0x00)
     def first_play(self):
-        sleep_ms(1000)
         self.awaitconfig()
         self.playtime = ticks_ms()
         self.command(0x11, 0x00, 0x01)
