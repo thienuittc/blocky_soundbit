@@ -61,7 +61,7 @@ class SoundBit():
     def first_play(self):
         self.awaitconfig()
         self.playtime = ticks_ms()
-        self.command(0x11, 0x00, 0x01)
+        self.command(0x0C, 0x00, 0x01)
 
     def play(self):
         self.awaitconfig()
@@ -83,6 +83,10 @@ class SoundBit():
         self.awaitconfig()
         self.playtime = ticks_ms()
         self.command(0x07, 0x00, music)
+    def playback(self,mode):
+        self.awaitconfig()
+        self.playtime = ticks_ms()
+        self.command(0x08, 0x00, mode)
     def finish(self, folderNum, trackNum):
         self.play(folderNum, trackNum)
         while self.playing():

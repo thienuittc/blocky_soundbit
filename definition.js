@@ -22,6 +22,51 @@ Blockly.Python['block_sound_firstplay'] = function(block) {
   var code = 'time.sleep_ms(1000)\nsound.first_play()\n';
   return code;
 };
+Blockly.Blocks['block_sound_playback'] = {
+  init: function() {
+    this.jsonInit(
+      {
+        "type": "block_sound_playback",
+        "message0": "playbackmode %1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "mode",
+            "options": [
+              [
+                "lặp toàn bộ",
+                "0x00"
+              ],
+              [
+                "lặp trong thư mục",
+                "0x01"
+              ],
+              [
+                "lặp 1 bài",
+                "0x02"
+              ],
+              [
+                "ngẫu nhiên",
+                "0x03"
+              ]
+            ]
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 230,
+        "tooltip": "",
+        "helpUrl": ""
+      }
+    );
+  }
+};
+Blockly.Python['block_sound_playback'] = function(block) {
+  var dropdown_mode = block.getFieldValue('mode');
+  // TODO: Assemble Python into code variable.
+  var code = 'time.sleep_ms(100)\nsound.playback('+dropdown_mode+')\n';
+  return code;
+};
 
 Blockly.Blocks['block_sound_button'] = {
   init: function() {
