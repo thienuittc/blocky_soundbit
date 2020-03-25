@@ -27,7 +27,7 @@ Blockly.Blocks['block_sound_playback'] = {
     this.jsonInit(
       {
         "type": "block_sound_playback",
-        "message0": "playbackmode %1",
+        "message0": "chế độ lặp %1",
         "args0": [
           {
             "type": "field_dropdown",
