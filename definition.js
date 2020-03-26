@@ -200,7 +200,7 @@ Blockly.Blocks['block_sound_vol'] = {
 };
 Blockly.Python['block_sound_vol'] = function(block) {
   var number_vol = Blockly.Python.valueToCode(block, 'vol', Blockly.Python.ORDER_ATOMIC);
-  number_vol = number_vol/100;
+  // number_vol = number_vol/100;
   // TODO: Assemble Python into code variable.
   var code = 'sound.volume('+number_vol+')\n';
   return code;

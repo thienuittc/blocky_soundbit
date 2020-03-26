@@ -130,7 +130,7 @@ class SoundBit():
     def volume(self, volume):
         self.awaitconfig()
         self._volume = float(clamp(volume, 0, 1.0))
-        val = int(30.0 * self._volume)
+        val = int(0.3 * self._volume)
         self.command(0x06,0x00 ,val)
         self.volumetime = ticks_ms()
 
