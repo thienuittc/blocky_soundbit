@@ -19,6 +19,9 @@ Blockly.Python['block_sound_firstplay'] = function(block) {
   Blockly.Python.definitions_['import_time'] = 'import time';
   Blockly.Python.definitions_['import_soundbit'] = 'from soundbit import *';
   Blockly.Python.definitions_['create_sound'] = 'sound = SoundBit()';
+  Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
+  Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, I2C';
+  Blockly.Python.definitions_['import_oled'] = 'from ssd1306 import SSD1306_I2C';
   var code = 'time.sleep_ms(1000)\nsound.first_play()\n';
   return code;
 };
@@ -259,5 +262,172 @@ Blockly.Python['block_sound_sound'] = function(block) {
   var dropdown_class = block.getFieldValue('class');
   // TODO: Assemble Python into code variable.
   var code = 'time.sleep_ms(20)\nsound.class_mucsic('+dropdown_class+')\n';
+  return code;
+};
+
+/////
+
+
+Blockly.Blocks['oled_text'] = {
+  init: function() {
+    this.jsonInit(
+      {
+        "type": "oled_text",
+        "message0": Blockly.Msg.OLED_TEXT_MESSAGE0,
+        "args0": [
+          {
+            "type": "field_variable",
+            "name": "oled_lcd",
+            "variable": Blockly.Msg.OLED_TEXT_MESSAGE1,
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "TEXT"
+          },
+          {
+            "type": "input_value",
+            "name": "X",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "Y",
+            "check": "Number"
+          },
+          {
+            "type": "field_dropdown",
+            "name": "COLOR",
+            "options": [
+              [
+                Blockly.Msg.OLED_TEXT_MESSAGE2, //white
+                "1"
+              ],
+              [
+                Blockly.Msg.OLED_TEXT_MESSAGE3, //black
+                "0"
+              ]
+            ]
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#780779",
+        "tooltip": Blockly.Msg.OLED_TEXT_TOOLTIP,
+        "helpUrl": Blockly.Msg.OLED_TEXT_HELPURL
+      }
+    );
+  }
+};
+
+Blockly.Python['oled_text'] = function(block) {
+  var variable_oled_lcd = Blockly.Python.variableDB_.getName(block.getFieldValue('oled_lcd'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_ATOMIC);
+  var value_x = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_ATOMIC);
+  var value_y = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_color = block.getFieldValue('COLOR');
+  // TODO: Assemble Python into code variable.
+  //oled.text('Hello, World 1!', 0, 0, col); oled.show()
+  var code = variable_oled_lcd + '.text(str(' + value_text + '), ' + value_x + ', ' + value_y + ', ' + dropdown_color + '); ' + variable_oled_lcd + '.show()\n';
+  return code;
+};
+
+Blockly.Blocks['oled_fill'] = {
+  init: function() {
+    this.jsonInit(
+      {
+        "type": "oled_fill",
+        "message0": Blockly.Msg.OLED_FILL_MESSAGE0,
+        "args0": [
+          {
+            "type": "field_variable",
+            "name": "oled_lcd",
+            "variable": Blockly.Msg.OLED_FILL_MESSAGE1,
+          },
+          {
+            "type": "field_dropdown",
+            "name": "COLOR",
+            "options": [
+              [
+                Blockly.Msg.OLED_FILL_MESSAGE2, //black
+                "0"
+              ],
+              [
+                Blockly.Msg.OLED_FILL_MESSAGE3, //white
+                "1"
+              ]
+            ]
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#780779",
+        "tooltip": Blockly.Msg.OLED_FILL_TOOLTIP,
+        "helpUrl": Blockly.Msg.OLED_FILL_HELPURL
+      }
+    );
+  }
+};
+
+Blockly.Python['oled_fill'] = function(block) {
+  var variable_oled_lcd = Blockly.Python.variableDB_.getName(block.getFieldValue('oled_lcd'), Blockly.Variables.NAME_TYPE);
+  var dropdown_color = block.getFieldValue('COLOR');
+  // TODO: Assemble Python into code variable.
+  //oled.fill(1); oled.show()
+  var code = variable_oled_lcd + '.fill(' + dropdown_color + '); ' + variable_oled_lcd + '.show()\n';
+  return code;
+};
+
+Blockly.Blocks['oled_onoff'] = {
+  init: function() {
+    this.jsonInit(
+      {
+        "type": "oled_onoff",
+        "message0": Blockly.Msg.OLED_TURN_MESSAGE0,
+        "args0": [
+          {
+            "type": "field_variable",
+            "name": "oled_lcd",
+            "variable": Blockly.Msg.OLED_TURN_MESSAGE1,
+          },
+          {
+            "type": "field_dropdown",
+            "name": "ONOFF",
+            "options": [
+              [
+                Blockly.Msg.OLED_TURN_MESSAGE2,
+                "ON"
+              ],
+              [
+                Blockly.Msg.OLED_TURN_MESSAGE3,
+                "OFF"
+              ]
+            ]
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#780779",
+        "tooltip": Blockly.Msg.OLED_TURN_TOOLTIP,
+        "helpUrl": Blockly.Msg.OLED_TURN_HELPURL
+      }
+    );
+  }
+};
+
+Blockly.Python['oled_onoff'] = function(block) {
+  var variable_oled_lcd = Blockly.Python.variableDB_.getName(block.getFieldValue('oled_lcd'), Blockly.Variables.NAME_TYPE);
+  var dropdown_onoff = block.getFieldValue('ONOFF');
+  // TODO: Assemble Python into code variable.
+  //oled.poweroff()
+  var code = ''
+  if (dropdown_onoff == 'ON') {
+    code = variable_oled_lcd + '.poweron()\n';
+  } else {
+    code = variable_oled_lcd + '.poweroff()\n';
+  }
+
   return code;
 };
