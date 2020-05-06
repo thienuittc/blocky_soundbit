@@ -106,7 +106,7 @@ Blockly.Blocks['block_sound_button'] = {
 Blockly.Python['block_sound_button'] = function(block) {
   var dropdown_nutnhan = block.getFieldValue('nutnhan');
   // TODO: Assemble Python into code variable.
-  var code = 'pin'+dropdown_nutnhan+'.read_digital()==0';
+  var code = 'pin'+dropdown_nutnhan+'.read_digital()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
