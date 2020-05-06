@@ -296,11 +296,11 @@ Blockly.Blocks["block_sound_updown_vol"] = {
           "options": [
             [
               "tăng",
-              "VolumeUp"
+              "volumeUp"
             ],
             [
               "giảm",
-              "VolumeDown"
+              "volumeDown"
             ]
           ]
         }
