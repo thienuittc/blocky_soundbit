@@ -81,16 +81,16 @@ Blockly.Blocks['block_sound_button'] = {
             "name": "nutnhan",
             "options": [
               [
-                "S1",
-                "15"
+                "P0",
+                "0"
               ],
               [
-                "S2",
-                "14"
+                "P1",
+                "1"
               ],
               [
-                "S3",
-                "13"
+                "P2",
+                "2"
               ]
             ]
           }
