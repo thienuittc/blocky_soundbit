@@ -128,9 +128,13 @@ class SoundBit():
         self.command(0x10,0 ,val)  
 
     def volume(self, volume):
+        if volume < 0 :
+            volume = 0
+        elif volume > 100 :
+            volume = 100
         self.awaitconfig()
-        self._volume = float(clamp(volume/100, 0, 1.0))
-        val = int(30.0 * self._volume)
+        self._volume = int(volume*0x1E/100)
+        val = self._volume
         self.command(0x06,0x00 ,val)
         self.volumetime = ticks_ms()
 
