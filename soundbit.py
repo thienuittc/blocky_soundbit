@@ -150,6 +150,13 @@ class SoundBit():
         self.awaitconfig()
         self.command(0x0C, 0x00, 0x00)
 
+    def VolumeUp(self) :
+        self.awaitconfig()
+        self.command(0x04, 0x00, 0x00)
+    def VolumeDown(self) :
+        self.awaitconfig()
+        self.command(0x05, 0x00, 0x00)
+
 def main():
     from time import sleep
     player = Player(busy_pin=Pin(0))

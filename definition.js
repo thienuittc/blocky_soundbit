@@ -284,3 +284,39 @@ Blockly.Python["block_sound_rotary"] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
+Blockly.Blocks["block_sound_updown_vol"] = {
+  init: function() {
+    this.jsonInit({
+      "type": "block_sound_updown_vol",
+      "message0": "%1 âm lượng",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "updown_vol",
+          "options": [
+            [
+              "tăng",
+              "VolumeUp"
+            ],
+            [
+              "giảm",
+              "VolumeDown"
+            ]
+          ]
+        }
+      ],
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 230,
+      "tooltip": "",
+      "helpUrl": ""
+    });
+  }
+};
+
+Blockly.Python['block_sound_updown_vol'] = function(block) {
+  var dropdown_updown_vol = block.getFieldValue('updown_vol');
+  // TODO: Assemble Python into code variable.
+  var code = 'time.sleep_ms(20)\nsound.'+dropdown_updown_vol+'()\n';
+  return code;
+};
