@@ -20,8 +20,6 @@ Blockly.Python['block_sound_firstplay'] = function(block) {
   Blockly.Python.definitions_['import_soundbit'] = 'from soundbit import *';
   Blockly.Python.definitions_['create_sound'] = 'sound = SoundBit()';
   Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
-  Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, I2C';
-  Blockly.Python.definitions_['import_oled'] = 'from ssd1306 import SSD1306_I2C';
   var code = 'time.sleep_ms(1000)\nsound.first_play()\n';
   return code;
 };
