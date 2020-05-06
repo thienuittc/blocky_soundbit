@@ -8,7 +8,7 @@
      <value name="vol"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
     </block>
     <block type="block_sound_sound"/>
-    <block type="block_sound_rotary"/>
+    <!-- <block type="block_sound_rotary"/> -->
     <block type="block_sound_updown_vol"/>
   </category>
 </xml>

@@ -307,7 +307,7 @@ Blockly.Blocks["block_sound_updown_vol"] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 230,
+      "colour": "#780779",
       "tooltip": "",
       "helpUrl": ""
     });

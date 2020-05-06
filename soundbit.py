@@ -152,12 +152,12 @@ class SoundBit():
 
     def volumeUp(self) :
         self.awaitconfig()
-        self.playtime = ticks_ms()
         self.command(0x04, 0x00, 0x00)
+        self.volumetime = ticks_ms()
     def volumeDown(self) :
         self.awaitconfig()
-        self.playtime = ticks_ms()
         self.command(0x05, 0x00, 0x00)
+        self.volumetime = ticks_ms()
 
 def main():
     from time import sleep
