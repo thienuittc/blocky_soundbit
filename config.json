@@ -1,5 +1,5 @@
 {
-    "name": "Máy nghe nhạc",
+    "name": "SOUND:BIT",
     "description": "Bộ mở rộng máy nghe nhạc",
     "libs": [
         "soundbit.py"
