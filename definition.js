@@ -91,6 +91,10 @@ Blockly.Blocks['block_sound_button'] = {
               [
                 "P2",
                 "2"
+              ],
+              [
+                "P3",
+                "3"
               ]
             ]
           }
